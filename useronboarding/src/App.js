@@ -4,6 +4,7 @@ import './App.css';
 import axios from 'axios'
 import schema from './Validator'
 import * as yup from 'yup'
+import UsersApp from './UsersApp'
 
 const initialFormValues = {// Sets all the values to blank and makes sure terms of service isnt checked.
   name: '',                   
@@ -93,10 +94,8 @@ useEffect(() =>{                  // This hook takes use to Yup page with schema
 
 
   return (
-    
-    
     <div className="App">
-     <Form
+    <Form
         values={formValues}    //Passes all the values from state to Form and callbacks Submit/Disabled
         change={inputChange}   //Sends our callback function inputChange as 'change' so we can use state to update formvalues one at a time
         submit={sumbitForm}    //sends callback submitform as 'submit' 
@@ -105,15 +104,11 @@ useEffect(() =>{                  // This hook takes use to Yup page with schema
       /> 
     <div>
       <h2>Users Boarded</h2>
-      <h3>Name : {users.map(obj=> obj.name)}</h3>
-      <h3>Email : {users.map(obj=> obj.email)}</h3>
-      <h3>Accepted Terms of Service: {users.map(obj=> obj.service) ? "Yes": "No"  }</h3>
-      
-      
+    {users.map(user=> <UsersApp  user= {user} />)}
     </div>
-    </div>
-
-  );
+    
+   </div>
+   )
 }
 
 export default App;
