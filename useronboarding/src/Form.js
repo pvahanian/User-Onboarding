@@ -1,4 +1,3 @@
-// import * as yup from 'yup'
 import React from 'react'
 
 
@@ -18,16 +17,6 @@ export default function Form (props) {
     return(
 
     <form className='form container' onSubmit={onSubmit}> 
-        
-        <div className='errors'>
-            {/* 🔥 RENDER THE VALIDATION ERRORS HERE @@@@@Leave blank until error handler setup */}
-            <div>{errors.username}</div>
-            <div>{errors.email}</div>
-            <div>{errors.role}</div>
-            <div>{errors.civil}</div>
-        </div>
-        
-    
         <div className='form-group inputs'>
         <h2>On Boarding Sign in</h2>
         {/* ////////// TEXT INPUTS ////////// */}
@@ -61,15 +50,22 @@ export default function Form (props) {
         {/* ////////// CHECKBOXES ////////// */}
         <label>Terms of Service
             <input
-              type="checkbox"
-              name="coding"
-            //   checked={values.coding}
-            //   onChange={onChange}
+            checked={values.service}
+            onChange={onChange}
+            type="checkbox"
+            name="service"
             />
-          </label>
+        </label>
         </div>
         <div className='form-group submit'>
         <button disabled={disabled} >Submit</button> 
+        </div>
+        <div className='errors'>
+            {/* 🔥 RENDER THE VALIDATION ERRORS HERE @@@@@Leave blank until error handler setup */}
+            <div>{errors.name}</div>
+            <div>{errors.email}</div>
+            <div>{errors.password}</div>
+            <div>{errors.service}</div>
         </div>  
     </form>
     )
