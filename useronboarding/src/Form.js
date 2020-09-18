@@ -50,7 +50,7 @@ export default function Form (props) {
         {/* ////////// CHECKBOXES ////////// */}
         <label>Terms of Service
             <input
-            checked={values.service}
+            value={values.service}
             onChange={onChange}
             type="checkbox"
             name="service"
@@ -58,7 +58,7 @@ export default function Form (props) {
         </label>
         </div>
         <div className='form-group submit'>
-        <button disabled={disabled} >Submit</button> 
+        <button disabled={disabled} id='submitBtn'>Submit</button> 
         </div>
         <div className='errors'>
             {/* 🔥 RENDER THE VALIDATION ERRORS HERE @@@@@Leave blank until error handler setup */}
@@ -70,4 +70,3 @@ export default function Form (props) {
     </form>
     )
 }
-//

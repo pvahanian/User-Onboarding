@@ -4,7 +4,7 @@ import './App.css';
 import axios from 'axios'
 import schema from './Validator'
 import * as yup from 'yup'
-import UsersApp from './UsersApp'
+import UsersApp from './UserApp'
 
 const initialFormValues = {// Sets all the values to blank and makes sure terms of service isnt checked.
   name: '',                   
@@ -107,8 +107,8 @@ useEffect(() =>{                  // This hook takes use to Yup page with schema
     {users.map(user=> <UsersApp  user= {user} />)}
     </div>
     
-   </div>
-   )
+  </div>
+  )
 }
 
 export default App;
